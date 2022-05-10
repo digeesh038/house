@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="static\style.css">
+    <style>
+        .centerdiv{
+height:20vh;
+display:flex;
+justify-content: center;
+align-items:center;}
+a{
+height:50px;
+width:50px;
+background-color:#f5f6fa;
+border-radius:50px;
+text-align:center;
+margin:20px;
+box-shadow:1px 4px 2px 2px #dcdde1;
+line-height:60px;
+}
+a i{
+transition: all 0.3s linear;}
+a:hover i{
+transform :scale(1.4);}
+.details{
+margin:5px;
+
+}
+    </style>
+</head>
+<body background="/static/house1.jpg">
+<h1 align="center" class="glow" >House Price Prediction</h1>
+<h2 align="center">House Price Prediction Using Machine Learning</h5>
+<!-- <div class="imagediv"><img src="static\ip1.jpg" alt="" class="img1"></div> -->
+
+<div class="forms">
+    <form action="{{ url_for('predict') }}" method="post" >
+        <label for="month">Posted By:</label>
+        <select name="posted" id="posted">
+             <option value="team">Owner or Dealer or Builder:</option>
+            <option value="Owner">Owner</option>
+            <option value="Dealer">Dealer</option>
+            <option value="Builder">Builder</option>
+        </select>
+        <label for="rera">RERA Approval:</label>
+        <select name="rera" id="rera">
+             <option value="team">Yes or No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option></select>
+
+             <label for="extras">Number of Rooms:</label>
+            <input type="number"name="rooms" placeholder="Number of Rooms" autocomplete="off" min="0" required>
+             <label for="foot">square foot</label>
+            <input type="number"name="foot" placeholder="Square Foot" autocomplete="off" step=0.1 min="0" required>
+                    <label for="ready">Ready to Move or Not:</label>
+
+            <select name="ready_to_move" id="batting">
+                 <option value="team">Yes or No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option></select>
+
+        </select>
+        <label for="resale">Resale</label>
+
+            <select name="resale" id="resale">
+                <option value="team">Yes or No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option></select>
+
+        </select>
+        <label for="location">Location Name</label>
+        <select name="location" id="location_name">
+            <option value="team">Select City Name</option>
+            <!-- <option value="Bangalore">Bangalore</option> -->
+<option value="Chennai">Chennai</option>
+<option value="Coimbatore">Coimbatore</option>
+<option value="Madurai">Madurai</option>
+<option value="Tirunelveli">Tirunelveli</option>
+            <option value="Others">Others</option>
+
+        </select>
+        <label for="area">Area</label>
+        <select name="area" id="location_name">
+            <option value="team">Select Area</option>
+            <!-- <option value="Bangalore">Bangalore</option> -->
+            <option value="Anupperpalayam">Anupperpalayam</option>
+<option value="Avarampalayam">Avarampalayam</option>
+<option value="Avinashi Road">Avinashi Road</option>
+<option value="Bharathi Nagar">Bharathi Nagar</option>
+<option value="Ganapathy">Ganapathy</option>
+<option value="Gandhipuram">Gandhipuram</option>
+<option value="GN Mills">GN Mills</option>
+<option value="K K Pudur">K K Pudur</option>
+<option value="Kalapatti">Kalapatti</option>
+<option value="Kalapatti road">Kalapatti road</option>
+<option value="Kalikkanaicken Palayam">Kalikkanaicken Palayam</option>
+<option value="Kallimadai">Kallimadai</option>
+<option value="Kavundampalayam">Kavundampalayam</option>
+<option value="Keeranatham">Keeranatham</option>
+<option value="Koundampalayam">Koundampalayam</option>
+<option value="Kovaipudur">Kovaipudur</option>
+<option value="Kuniyamuthur">Kuniyamuthur</option>
+<option value="Mettupalayam Road">Mettupalayam Road</option>
+<option value="MULLAI NAGAR MARUTHAMALAI ROAD">MULLAI NAGAR MARUTHAMALAI ROAD</option>
+<option value="Nallampalayam">Nallampalayam</option>
+<option value="Nanjundapuram">Nanjundapuram</option>
+<option value="New Siddhapudur">New Siddhapudur</option>
+<option value="New Thillai Nagar">New Thillai Nagar</option>
+<option value="NGGO Colony">NGGO Colony</option>
+<option value="Ondiputhur">Ondiputhur</option>
+<option value="P.N.Palayam">P.N.Palayam</option>
+<option value="Pappanaicken Pudur">Pappanaicken Pudur</option>
+<option value="Peelamedu">Peelamedu</option>
+<option value="Peelamedu Pudur">Peelamedu Pudur</option>
+<option value="Perur">Perur</option>
+<option value="PN PUDHUR">PN PUDHUR</option>
+<option value="Podanur">Podanur</option>
+<option value="R.S.Puram">R.S.Puram</option>
+<option value="Race Course">Race Course</option>
+<option value="Ramanathapuram">Ramanathapuram</option>
+<option value="Ramnagar">Ramnagar</option>
+<option value="Saibaba Colony">Saibaba Colony</option>
+<option value="Saravanampatti">Saravanampatti</option>
+<option value="Saravannapatti">Saravannapatti</option>
+<option value="Selvapuram">Selvapuram</option>
+<option value="Singanallur">Singanallur</option>
+<option value="Sowripalayam">Sowripalayam</option>
+<option value="Sridevi Nagar">Sridevi Nagar</option>
+<option value="Subramaniyampalayam">Subramaniyampalayam</option>
+<option value="Sundarapuram">Sundarapuram</option>
+<option value="Sungam">Sungam</option>
+<option value="Tardeo">Tardeo</option>
+<option value="Tatabad">Tatabad</option>
+<option value="Telungupalayam">Telungupalayam</option>
+<option value="Thondamuthur">Thondamuthur</option>
+<option value="Thudiyalur">Thudiyalur</option>
+<option value="Thudiyalur Road">Thudiyalur Road</option>
+<option value="Town Hall">Town Hall</option>
+<option value="Trichy Road">Trichy Road</option>
+<option value="TVS nagar">TVS nagar</option>
+<option value="Udayampalayam">Udayampalayam</option>
+<option value="Uppilipalayam">Uppilipalayam</option>
+<option value="Vadavalli">Vadavalli</option>
+<option value="Vedapatti">Vedapatti</option>
+<option value="Vellakinar">Vellakinar</option>
+<option value="Vilankurichi">Vilankurichi</option>
+            <option value="Others">Others</option>
+
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+<div  class="headw">{% with messages=get_flashed_messages() %}
+   {% if messages %}
+     {% for msg in messages %}
+        <h3 align="center" >{{msg}}</h3>
+     {% endfor %}
+   {% endif %}
+{% endwith %}</div>
+<div class="details" align="center">
+    
+    <h2 class="shimmer">⚡⚡⚡TECHIEZZZ⚡⚡⚡</h2>
+</div>
+</div>
+
+
+</div>
+</body>
+</html>
