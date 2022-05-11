@@ -208,5 +208,24 @@ shimmer {
         text-shadow: 0 0 20px #fff, 0 0 30px #2347e9, 0 0 40px #2390d3, 0 0 50px #153e77, 0 0 60px #27668d, 0 0 70px #105c6d, 0 0 80px #2c0460;
       }
     }
+    .shimmer {
+      font-family: "Lato";
+      font-weight: 300;
+      font-size: 12px;
+      margin:20 auto;
+  /*     padding: 0 140px 0 0; */
+      margin-bottom: 0;
+      -webkit-animation-duration: none;
+  animation-duration: none;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+    }
     
+  } 
+  
+  .noanimated {
+  -webkit-animation-duration: none;
+  animation-duration: none;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
   }
