@@ -219,4 +219,11 @@ shimmer {
     }
     
   } 
+
+  .noanimated {
+    -webkit-animation-duration: none;
+    animation-duration: none;
+    -webkit-animation-fill-mode: none;
+    animation-fill-mode: none;
+  }
   

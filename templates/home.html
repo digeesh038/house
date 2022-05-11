@@ -32,6 +32,12 @@ transform :scale(1.4);}
 margin:5px;
 
 }
+.noanimated {
+-webkit-animation-duration: none;
+animation-duration: none;
+-webkit-animation-fill-mode: none;
+animation-fill-mode: none;
+}
     </style>
 </head>
 <body background="/static/house1.jpg">
@@ -130,5 +136,11 @@ margin:5px;
             document.getElementById("area").innerHTML = catOptions;
         }
     }
+</script>
+<script>
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+{
+    $('body').addClass('noanimated'); // to remove transition
+};
 </script>
 </html>
