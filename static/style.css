@@ -170,3 +170,43 @@ shimmer {
       text-shadow: 0 0 20px #fff, 0 0 30px #2347e9, 0 0 40px #2390d3, 0 0 50px #153e77, 0 0 60px #27668d, 0 0 70px #105c6d, 0 0 80px #2c0460;
     }
   }
+  @media only screen and (max-width: 600px) {
+    .forms {
+      max-width: 350px;
+      margin: auto;
+  
+      backdrop-filter: blur(5px);
+    width: 250px;
+    padding: 4% 0 0;
+    margin: auto;
+      position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 250x;
+    margin: 0 auto 100px;
+    padding: 25px;
+    text-align: start;
+    border-radius: 25px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: rgba(109,116,111,0.4); 
+  }
+    
+    .glow {
+      font-size: 24.5px;
+      color: #fff;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+    
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0d3571, 0 0 40px #711fbe, 0 0 50px #257ed8, 0 0 60px #1999fa, 0 0 70px #256aff;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #2347e9, 0 0 40px #2390d3, 0 0 50px #153e77, 0 0 60px #27668d, 0 0 70px #105c6d, 0 0 80px #2c0460;
+      }
+    }
+    
+  }
