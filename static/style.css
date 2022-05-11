@@ -218,7 +218,7 @@ shimmer {
  /*     padding: 0 140px 0 0; */
      margin-bottom: 0;
    text-align: center;
-   color: white;
+   color: rgba(225,225,225,0.6);
    background: none;
    -webkit-background-size: 125px 100%;
    -moz-background-size: 125px 100%;
