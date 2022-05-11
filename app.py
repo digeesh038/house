@@ -1,4 +1,4 @@
-from flask import Flask,render_template,redirect,url_for,request,session,flash
+from flask import Flask,render_template,redirect,url_for,request,session,flash,json
 import numpy as np
 import pickle
 app=Flask(__name__)
@@ -101,21 +101,53 @@ def predict():
          vals.append(yes_map[ready])
          resale=request.form["resale"]
          vals.append(yes_map[resale])
-         location=request.form["area"]
-         vals.append(area_map[location])
-         with open("coimbatore_model.pkl","rb") as f:
-             model=pickle.load(f)
-         with open("coimbatore_scalar.pkl","rb") as f:
-             scalar=pickle.load(f)
-         vals=scalar.transform([vals])
-         res=model.predict(vals)
-         if location=="Gandhipuram":
-             factor=0.15
-             res=res*factor+res
-         elif(location=="R.S.Puram" or location=="Saibaba Colony"):
-             res+=10
+         city=request.form["city"]
+         
+         print(city)
+         if(city=="Coimbatore"):
+            with open("coimbatore_model.pkl","rb") as f:
+                model=pickle.load(f)
+            with open("coimbatore_scalar.pkl","rb") as f:
+                scalar=pickle.load(f)
+            location=request.form["area"]
+            vals.append(area_map[location])
+            vals1=vals
+            vals=scalar.transform([vals])
+            res=model.predict(vals)
+            fvals=[]
+            for i in area_map.keys():
+                vals2=vals1
+                vals2.pop()
+                vals2.append(area_map[i])
+                vals=scalar.transform([vals2])
+                res=model.predict(vals)
+                for val in res:
+                    fvals.append(round(float(val),2))
+                    
+            
+            if location=="Gandhipuram":
+                factor=0.15
+                res=res*factor+res
+            elif(location=="R.S.Puram" or location=="Saibaba Colony"):
+                 res+=10
+            
+         else:
+             with open("my_model.pkl","rb") as f:
+                model=pickle.load(f)
+             with open("my_scalar.pkl","rb") as f:
+                scalar=pickle.load(f)
+             city=request.form["city"]
+             vals.append(location_map[city])
+             vals=scalar.transform([vals])
+             res=model.predict(vals)
          for val in res:
              flash(f"The Price of the House is around {int(val)} Lacs","info")
-         return render_template("index.html")
+         area_list=list(area_map.keys())
+         if(city=="Coimbatore"):
+            print(fvals)
+            return render_template("index.html",result=[fvals,area_list])
+         else:
+            return render_template("index2.html")
+        
 if __name__=="__main__":
     app.run(debug=True)

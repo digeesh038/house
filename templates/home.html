@@ -74,85 +74,28 @@ margin:5px;
             <option value="No">No</option></select>
 
         </select>
-        <label for="location">Location Name</label>
-        <select name="location" id="location_name">
-            <option value="team">Select City Name</option>
+        <label for="location">City Name:</label>
+        <select name="city" id="city" onChange="changecat(this.value);">
+            <option value="" disabled selected>Select</option>
+            option value="city">Select City Name</option>
             <!-- <option value="Bangalore">Bangalore</option> -->
+            <option value="Mumbai">Mumbai</option>
+            <option value="Mysore">Mysore</option>
+            <option value="Ghaziabad">Ghaziabad</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Kochi">Kochi</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Mohali">Mohali</option>
 <option value="Chennai">Chennai</option>
 <option value="Coimbatore">Coimbatore</option>
 <option value="Madurai">Madurai</option>
-<option value="Tirunelveli">Tirunelveli</option>
-            <option value="Others">Others</option>
-
         </select>
-        <label for="area">Area</label>
-        <select name="area" id="location_name">
-            <option value="team">Select Area</option>
-            <!-- <option value="Bangalore">Bangalore</option> -->
-            <option value="Anupperpalayam">Anupperpalayam</option>
-<option value="Avarampalayam">Avarampalayam</option>
-<option value="Avinashi Road">Avinashi Road</option>
-<option value="Bharathi Nagar">Bharathi Nagar</option>
-<option value="Ganapathy">Ganapathy</option>
-<option value="Gandhipuram">Gandhipuram</option>
-<option value="GN Mills">GN Mills</option>
-<option value="K K Pudur">K K Pudur</option>
-<option value="Kalapatti">Kalapatti</option>
-<option value="Kalapatti road">Kalapatti road</option>
-<option value="Kalikkanaicken Palayam">Kalikkanaicken Palayam</option>
-<option value="Kallimadai">Kallimadai</option>
-<option value="Kavundampalayam">Kavundampalayam</option>
-<option value="Keeranatham">Keeranatham</option>
-<option value="Koundampalayam">Koundampalayam</option>
-<option value="Kovaipudur">Kovaipudur</option>
-<option value="Kuniyamuthur">Kuniyamuthur</option>
-<option value="Mettupalayam Road">Mettupalayam Road</option>
-<option value="MULLAI NAGAR MARUTHAMALAI ROAD">MULLAI NAGAR MARUTHAMALAI ROAD</option>
-<option value="Nallampalayam">Nallampalayam</option>
-<option value="Nanjundapuram">Nanjundapuram</option>
-<option value="New Siddhapudur">New Siddhapudur</option>
-<option value="New Thillai Nagar">New Thillai Nagar</option>
-<option value="NGGO Colony">NGGO Colony</option>
-<option value="Ondiputhur">Ondiputhur</option>
-<option value="P.N.Palayam">P.N.Palayam</option>
-<option value="Pappanaicken Pudur">Pappanaicken Pudur</option>
-<option value="Peelamedu">Peelamedu</option>
-<option value="Peelamedu Pudur">Peelamedu Pudur</option>
-<option value="Perur">Perur</option>
-<option value="PN PUDHUR">PN PUDHUR</option>
-<option value="Podanur">Podanur</option>
-<option value="R.S.Puram">R.S.Puram</option>
-<option value="Race Course">Race Course</option>
-<option value="Ramanathapuram">Ramanathapuram</option>
-<option value="Ramnagar">Ramnagar</option>
-<option value="Saibaba Colony">Saibaba Colony</option>
-<option value="Saravanampatti">Saravanampatti</option>
-<option value="Saravannapatti">Saravannapatti</option>
-<option value="Selvapuram">Selvapuram</option>
-<option value="Singanallur">Singanallur</option>
-<option value="Sowripalayam">Sowripalayam</option>
-<option value="Sridevi Nagar">Sridevi Nagar</option>
-<option value="Subramaniyampalayam">Subramaniyampalayam</option>
-<option value="Sundarapuram">Sundarapuram</option>
-<option value="Sungam">Sungam</option>
-<option value="Tardeo">Tardeo</option>
-<option value="Tatabad">Tatabad</option>
-<option value="Telungupalayam">Telungupalayam</option>
-<option value="Thondamuthur">Thondamuthur</option>
-<option value="Thudiyalur">Thudiyalur</option>
-<option value="Thudiyalur Road">Thudiyalur Road</option>
-<option value="Town Hall">Town Hall</option>
-<option value="Trichy Road">Trichy Road</option>
-<option value="TVS nagar">TVS nagar</option>
-<option value="Udayampalayam">Udayampalayam</option>
-<option value="Uppilipalayam">Uppilipalayam</option>
-<option value="Vadavalli">Vadavalli</option>
-<option value="Vedapatti">Vedapatti</option>
-<option value="Vellakinar">Vellakinar</option>
-<option value="Vilankurichi">Vilankurichi</option>
-            <option value="Others">Others</option>
 
+        <label for="area">Area Name:</label>
+        <select name="area" id="area">
+            <option value="" disabled selected>Select</option>
         </select>
+        
         <input type="submit" value="Submit">
     </form>
 <div  class="headw">{% with messages=get_flashed_messages() %}
@@ -171,4 +114,21 @@ margin:5px;
 
 </div>
 </body>
+<script>
+    var mealsByCategory = {
+        "Chennai":["Ksfc Layout", "Vishweshwara Nagar", "Sector-1 Vaishali", "New Town", "South Chittoor", "Sodala", "Kharar", "Chromepet", "Deshbandhu Para", "Sector-119 Noida", "sanjay nagar", "Jharapada", "Nagpur Road", "Undri", "Bandra (West)", "Narendra Nagar", "Mohan Asram", "Alwar Bypass Road", "Sector 84 Faridabad", "Thane West", "Mulund (West)", "Vasna", "Madhurawada", "Near Ambamata Mandir", "Bolar", "Nandanwan Phases 2", "Poolakkaparambu", "Madhuranagar", "Tilakwadi", "tallaiya", "Gomti Nagar Extension", "Tilak Nagar", "Kalol", "Eswaran Koil Street", "Sikandra", "Kanke", "Sector-65 Gurgaon", "Katapady", "Bicholi Mardana", "Paota", "Vadavalli", "RM Park", "Saphale", "Citylight Area", "Ramna", "Jalukbari", "Sai Nagar", "Karamsad", "Tiruchanur", "Kompally", "Bhatagaon", "Cantonment", "Punkunnam", "Giduri", "Andalpuram", "Zirakpur", "ISBT Tutikandi", "City Center", "Vimal Nagar", "Kundli", "Naini", "Gopabandhu Nagar", "Suddaguntepalya", "G-303", "Opposite Civil Hospital", "Sector - 22 Dharuhera", "Rudreshawar Chowk", "Gopalpur", "Mdc Sector-4", "laxmipet", "Borsi", "Dabolim", "Adityapur", "merawal", "Adarsh Nagar", "Avalapalli Hudco", "Khodiyar Park", "Deshpande Nagar", "Sector-6 Karnal", "Keshri Nagar", "Shanti Nagar", "Chiplun", "Madhavpuram", "Ratanpur", "Pholriwal", "SG Enclave", "Sirhind By-Pass", "Sidhwan Canal Road", "Kherado", "Anantpura", "Caranzalem", "Valmikinagar", "New Washi Naka", "Kumaranasan Nagar", "Vidhyanagar", "Maktampur", "Kumarpur", "Lahargird", "Fatorda", "Puttaparthi", "Ramachandra Rao Pet", "Model Town", "Sahastradhara", "Gorantla", "Gandharv colony", "Bhuwana", "Gurdaspur Improvement Trust Scheme No.7", "NH-8", "Shivjyothinagara Adlimane Road", "Arawali", "Ambika Nagar", "Harda Bypass Road Near Apna Narmada Hospital", "Kodimatha", "Hirapur", "Orgao", "Kabilpore", "Sector-15 Bahadurgarh", "Tada", "Kalyanagar banaswadi", "Professor Colony", "Thachanallur", "Trisulia", "Roshanabad", "Shyamkhet", "Krishnapur", "Gokul Nagar", "Ashok Nagar", , "Mevalurkuppam", "Madhuban Apartment Chattral Highway", "karvenaka", "Naya Para", "Abith Colony", "Model Town", "Club Road Mithanpura", "Ganesh Nagar", "Alagapuram", "Modi Road", "Sector-7 Gandhidham", "Ambika Chowk", "Ram Ganga Vihar Phase 2", "Kamakoti Nagar", "Nirman Nagar", "Kestopur", "vasundhara nagar", "Bharat Nagar", "Chandranagar", "Thalassery", "Military Camp", "Devlali", "Tapadia Nagar", "Bhatnagar Colony", "Sector 15", "Kempapura", "Bodhgaya", "Baldev Nagar", "Haribhau Upadhyay Nagar", "Ernakulam", "Chakan", "industrial area", "Teka Naka", "Mukambika Nagar", "Illupur", "Polayathodu", "Dasprakash Road", "Rajni Nagar", "Court More", "Khazoor Gaon", "NIT Layout", "Ambattur", "Shambhoo Khurd", "Swarna Jayanti Nagar", "vasantam nagar", "Periyar Nagar", "Tngo colony", "Kalyanpur", "Duggirala", "mangamuru road", "Opp reliance market", "Bodhan", "Alikia", "Dalhousie Cantonment", "Siddipet", "Saproon", "Mirzapur", "Beside Ramkrishna Hospital", "Warchiwadi", "Brahmin Street Near To Mahila Police Station", "Suresh nagar", "Upper Bazaar", "near Cng filling station", "Krishna Nagar", "Flat", "Bhagwat Chowk", "Near Oakover", "Near Iskon City", "Waddepally", "Ujala Nagar", "Gavaliwada", "Bhivpuri", "Airport", "H B Town", "Ghordour Chatti", "dhalwala", "Civil Lines", "Chira Chas", "Mangamoor Road", "tilak nagar", "Vijay Khand", "Sarbahal", "Near St.Mary School", "Svr colony rd.no: 5", "Rampur Ghana", "Modinagar", "Himatnagar", "Adam street", "Indralok Colony", "Kusumkhera", "Manickam Nagar", "Sindhi Colony", "Mathavan Nagar", "S.V.Nagar", "Anna Street", "new bus stand", "Sai Colony", "Behind Pharmacy College", "Parel", "Govardhan", "Opp. EVP Theme Park", "Gandhinagar", "Varunji", "Improvemnt Trust Colony", "ARAVLI HEIGHTS", "Voharwad", "Malancha", "Gujarathipeta", "Govt housing colony ompora", , "Saratpally", "Hill View (South)", "Near Hadapsar", "M P Mill Compound", "Bank Colony", "shri ram colony", "Close to temple", "Koppa - Begur Rd", "Sewala Kalan", "Vasavira", "Sector - 35 Rohtak", "Sumerpur", "Kamla Bazar", "Nikhil Woodland", "Wadgaon", "veeraragavalu Nagar", "Sardar Patel Stadium", "Baleshwar", "Noombal", "JD NAGAR", "Panchsheel Colony", "Ambika Township", "Kargaina", "Deshaiphet Road Kalyani Nagar", "Green Earth City", "Anjanapura", "Nikasa", "Ravapar", "Kumbakonam", "Shahpur", "Rani Bazar", "Chitalkar lay Out", "Shashikala Kunj", "Talewadi", "Aditya Mega City", "Karaundi", "Dhara Nagar", "Ghogali Besa", "Chatrapati Chowk Purna Road", "Udit Nagar", "Santram deri road", "Kanakapura Road", "Bharathiyar Street", "Kasavanahalli", "Hoodi Circle", "Maktampura", "Nainital", "OPP - T B HOSPITAL", "CIRCLE RING ROAD", "Khudiram Metro", "Sai Villa Flet", "Kuansh", "Sector-8 kurukshetra", "Housing board colony", "Nageshwar", "ambikani ketan", "Neraluru", "Anakaputtur", "Dhoran Road", "P.N.Road", "Makronia", "Godugupet", "Mandi Sayeed Khan", "Thukalassery", "gotal pajri", "Neeladri road", "Doddathoguru", "VIKAS NAGAR", "Bimleswari Colony", "Mithila", "Sainik Colony", "Murickassery", "Sarabhai Campaus", "Housing Board Colony", "Cine wandar mall", "Green House Layout", "Subhash Chowk", "Palava city", "Ashok Vihar", "New Balaji Nagar", "Boirdadar", "Abdul Road", "Shubham Apartment", "Anandapura", "R.R SHOME ROAD", "Gopali Chowk", "Fauzdaripatty", "Jalaram Society", "Konekar Wada", "pushti nagar", "Braham Puri", "Mayiladuthurai", "ICF Colony Extn", "Mansarovar Yojna", "Khatu", "Anoopshahr Road", "Rangoli Greens", "Jivrajpark", "Rajarhat", "Cv raman nagar", "Similipada", "Illisipuram", "Golaghata", "Barotiwala", "Kumar Chowk","Sector-29 Pratap Nagar", "Near silver Estate", "St.Marys Hill", "Rajarhat Road", "In Font Of Mumbai University Subcentre", "link road", "Patel Nagar", "Madhura Nagar", "Kenchenahalli", "Bus Stand Khepra", "Baddi", "Katkat Pura Badhir Gunj", "Off Manish Nagar", "Uttran Kosad Road", "Indra Nagar", "Sivanchetti gardens", "Shanti Nagar", "Srinivasapuram", "prakash colony", "Tardeo", "Ayodhya Nagar", "Outer Ring Road", "Parkview Apartments", "Vallabh market", "Scared Heart School Behind", "Daldal Seoni", "Motilal Gupta Road", "Kalyaninagar", "Vasant Vatika", "Talegaon Dabhade", "Bajarang Nagar", "Baranagar Municipality", "sector 4", "Dipatoli", "Chorda Bypass Square", "Krishna Enclave", "Baradwaj Nagar", "Vasai west", "Kunal Kruti Appartment", "Sidedahalli", "Brajanathchak", "Kattamanchi", "Gaddopur", "Central park", "Devpur Road", "Perinthalmanna", "Kalapatha", "Surendranagar", "Bhularai Near Vill Patrol Pump", "Moti Vohrwad Main Bazar", "B C ROAD", "beach road", "Near to S P office", "Bank Colony", "State Highway 37", "Kirti Nagar", "BELLA HOMES", "Anugrahpuri", "lal palace area", "Central Apartment", "Madhira", "Ainthapali", "Inner ring road", "MadhukarApartment", "Housing Board", "Laxmi Nagar Gondia", "Bhayandar Pada", "Bhosale Village", "Babde Layout", "Opp. Philia Hospital", "Dugdha Vihar", "Arni Road", "Anand Nagar", "Madhapar", "Talimapur", "Natesan Nagar", "mantri park", "Sri Nagar Colony", "Near balaji complex", "Sivagami nagar", "E3-108"].sort(),
+    "Coimbatore": ["Anupperpalayam", "Avarampalayam", "Avinashi Road", "Bharathi Nagar", "GN Mills", "Ganapathy", "Gandhipuram", "K K Pudur", "Kalapatti", "Kalapatti road", "Kalikkanaicken Palayam", "Kallimadai", "Kavundampalayam", "Keeranatham", "Koundampalayam", "Kovaipudur", "Kuniyamuthur", "MULLAI NAGAR MARUTHAMALAI ROAD", "Mettupalayam Road", "NGGO Colony", "Nallampalayam", "Nanjundapuram", "New Siddhapudur", "New Thillai Nagar", "Ondiputhur", "P.N.Palayam", "PN PUDHUR", "Pappanaicken Pudur", "Peelamedu", "Peelamedu Pudur", "Perur", "Podanur", "R.S.Puram", "Race Course", "Ramanathapuram", "Ramnagar", "Saibaba Colony", "Saravanampatti", "Saravannapatti", "Selvapuram", "Singanallur", "Sowripalayam", "Sridevi Nagar", "Subramaniyampalayam", "Sundarapuram", "Sungam", "TVS nagar", "Tardeo", "Tatabad", "Telungupalayam", "Thondamuthur", "Thudiyalur", "Thudiyalur Road", "Town Hall", "Trichy Road", "Udayampalayam", "Uppilipalayam", "Vadavalli", "Vedapatti", "Vellakinar", "Vilankurichi"],
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("area").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("area").innerHTML = catOptions;
+        }
+    }
+</script>
 </html>
