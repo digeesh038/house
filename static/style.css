@@ -98,7 +98,7 @@ shimmer {
   }
   .shimmer {
     text-align: center;
-    color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
     background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
     background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
     background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
@@ -199,6 +199,7 @@ shimmer {
       -webkit-animation: glow 1s ease-in-out;
       -moz-animation: glow 1s ease-in-out;
       animation: glow 1s ease-in-out;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0d3571, 0 0 40px #711fbe, 0 0 50px #257ed8, 0 0 60px #1999fa, 0 0 70px #256aff;
     }
     
     @-webkit-keyframes glow {
@@ -211,12 +212,33 @@ shimmer {
     }
     .shimmer {
       font-family: "Lato";
-      font-weight: 300;
-      font-size: 12px;
-      margin:20 auto;
-  /*     padding: 0 140px 0 0; */
-      margin-bottom: 0;
-    }
+     font-weight: 300;
+     font-size: 12px;
+     margin:20 auto;
+ /*     padding: 0 140px 0 0; */
+     margin-bottom: 0;
+   text-align: center;
+   color: white;
+   background: none;
+   -webkit-background-size: 125px 100%;
+   -moz-background-size: 125px 100%;
+   background-size: 125px 100%;
+   -webkit-background-clip: text;
+   -moz-background-clip: text;
+   background-clip: text;
+   -webkit-animation-name: shimmer;
+   -moz-animation-name: shimmer;
+   animation-name: shimmer;
+   -webkit-animation-duration: 2s;
+   -moz-animation-duration: 2s;
+   animation-duration: 2s;
+   -webkit-animation-iteration-count: infinite;
+   -moz-animation-iteration-count: infinite;
+   animation-iteration-count: infinite;
+   background-repeat: no-repeat;
+   background-position: 0 0;
+   background-color: #222;
+ }
     
   } 
 
